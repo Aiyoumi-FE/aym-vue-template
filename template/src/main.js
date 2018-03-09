@@ -4,6 +4,9 @@
 {{/if_eq}}
 import Vue from 'vue'
 import App from './App'
+import aymUI from 'aym-ui'
+import 'aym-ui/style.css'
+Vue.use(aymUI)
 {{#router}}
 import router from './router'
 {{/router}}
