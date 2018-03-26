@@ -69,11 +69,16 @@ module.exports = {
         },
       ],
     },
+    aym: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Install aym-ui and axios?',
+    },
     router: {
       when: 'isNotTest',
       type: 'confirm',
       message: 'Install vue-router?',
-    },
+    }, 
     lint: {
       when: 'isNotTest',
       type: 'confirm',
@@ -170,6 +175,7 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
+    'src/api/**/*': 'aym'
   },
   complete: function(data, { chalk }) {
     const green = chalk.green

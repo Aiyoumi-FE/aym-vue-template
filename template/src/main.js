@@ -4,12 +4,18 @@
 {{/if_eq}}
 import Vue from 'vue'
 import App from './App'
-import aymUI from 'aym-ui'
-import 'aym-ui/style.css'
-Vue.use(aymUI)
+
 {{#router}}
 import router from './router'
 {{/router}}
+
+{{#aym}}
+import aymUI from 'aym-ui'
+import 'aym-ui/lib/index.css'
+import { install as Global } from './global'
+Vue.use(aymUI)
+Vue.use(Global)
+{{/aym}}
 
 Vue.config.productionTip = false
 
