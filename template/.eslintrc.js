@@ -12,7 +12,7 @@ module.exports = {
   extends: [
     // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
     // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
+    'plugin:vue/essential',
     // https://github.com/standard/standard/blob/master/docs/RULES-en.md
     'standard'
   ],
@@ -47,6 +47,7 @@ module.exports = {
     // allow async-await
     'generator-star-spacing': 'off',
     {{/if_eq}}
+    'space-before-function-paren': ['error', { 'anonymous': 'never', 'named': 'never', 'asyncArrow': 'always' }],
     {{#if_eq lintConfig "airbnb"}}
     // don't require .vue extension when importing
     'import/extensions': ['error', 'always', {
