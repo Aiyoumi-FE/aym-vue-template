@@ -51,6 +51,11 @@ module.exports = {
       type: 'string',
       message: 'Author',
     },
+    aym: {
+      when: 'isNotTest',
+      type: 'confirm',
+      message: 'Install aym base?'
+    },
     build: {
       when: 'isNotTest',
       type: 'list',
@@ -68,11 +73,6 @@ module.exports = {
           short: 'runtime',
         },
       ],
-    },
-    aym: {
-      when: 'isNotTest',
-      type: 'confirm',
-      message: 'Install aym-ui and axios?'
     },
     router: {
       when: 'isNotTest',
@@ -175,8 +175,9 @@ module.exports = {
     'test/unit/setup.js': "unit && runner === 'jest'",
     'test/e2e/**/*': 'e2e',
     'src/router/**/*': 'router',
-    'src/api/**/*': 'aym',
-    'config/proxy.conf.js': 'aym'
+    'src/+(api|store)/**/*': 'aym', 
+    'config/+(proxy.conf|path).js': 'aym',
+    'bin/**/*': 'aym'
   },
   complete: function(data, { chalk }) {
     const green = chalk.green

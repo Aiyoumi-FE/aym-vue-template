@@ -13,6 +13,7 @@ import router from './router'
 import aymUI from 'aym-ui'
 import 'aym-ui/lib/index.css'
 import { install as Global } from './global'
+import store from '@/store'
 Vue.use(aymUI)
 Vue.use(Global)
 {{/aym}}
@@ -25,6 +26,9 @@ new Vue({
   {{#router}}
   router,
   {{/router}}
+  {{#aym}}
+  store,
+  {{/aym}}
   {{#if_eq build "runtime"}}
   render: h => h(App)
   {{/if_eq}}

@@ -5,6 +5,13 @@ import routerConfig from './router-table'
 
 Vue.use(Router)
 
-export default new Router({
+const router = new Router({
+  mode: 'history',
   routes: routerConfig
 })
+
+router.beforeEach((to, from, next) => {
+    document.title = to.meta.title
+    next()
+})
+export default route

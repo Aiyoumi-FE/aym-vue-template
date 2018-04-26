@@ -1,4 +1,4 @@
-const prefix = 'micro' // 前缀
+const prefix = '{{name}}' // 前缀
 
 const cookieLocal = {}
 const routerLocal = {}
@@ -21,7 +21,6 @@ const devPort = '' // xx
 //***********************************************************************//
 
 const env = [
-    'dev',
     'test',
     'aliyun1',
     'aliyun2',
