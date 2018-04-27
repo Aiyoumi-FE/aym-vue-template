@@ -4,7 +4,7 @@ forked from vuejs-templates/webpack , 如果要看原始说明，请移步[vuejs
 
 ``` bash
 $ npm install -g vue-cli
-$ vue init zq741235/aym-vue-template my-project
+$ vue init Aiyoumi-FE/aym-vue-template my-project
 $ cd my-project
 $ npm install
 $ npm run dev
@@ -13,7 +13,7 @@ $ npm run dev
 默认安装的是`master`分支，如果希望使用最新开发版本，可以使用以下命令
 
 ``` bash
-$ vue init zq741235/aym-vue-template#develop my-project
+$ vue init Aiyoumi-FE/aym-vue-template#develop my-project
 ```
 
 :warning: **使用开发版本可能有bug,需要承担风险.**
