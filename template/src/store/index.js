@@ -4,11 +4,9 @@ import common from './modules/common'
 
 Vue.use(Vuex)
 export default new Vuex.Store({
-    state: {
-    },
-    mutations: {
-    },
+    state: {},
+    mutations: {},
     modules: {
-      common
+        common
     }
 })
