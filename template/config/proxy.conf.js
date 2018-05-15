@@ -38,6 +38,11 @@ const formatDomain = (type) => {
 let frontList = formatDomain('dev')
 let serverList = formatDomain('server')
 
+console.log('******************* ADD HOST*******************************')
+console.log('vi /etc/hosts')
+console.log('127.0.0.1 ', frontList.join(' '))
+console.log('***********************************************************')
+
 serverList.forEach((item, i) => {
     cookieLocal[item] = frontList[i]
 })
