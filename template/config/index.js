@@ -2,9 +2,14 @@
 // Template version: {{ template_version }}
 // see http://vuejs-templates.github.io/webpack for documentation.
 
+let proxyTable = {}
+
 const path = require('path')
 {{#aym}}
-const proxyConfig = require('./proxy.conf.js')
+const config = require('./path')
+if (process.env.NODE_ENV !== 'production') {
+    proxyTable = require('./proxy.conf.js').proxyConfig
+}
 {{/aym}}
 module.exports = {
   dev: {
@@ -12,7 +17,7 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {{#aym}}proxyConfig.proxyTable{{else}} {} {{/aym}}, //{}
+    proxyTable: proxyTable, //{}
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -47,11 +52,18 @@ module.exports = {
   },
 
   build: {
+    {{#aym}}
+    // Template for index.html
+    index: path.resolve(config.remote + '/index.html'),
+    // Paths
+    assetsRoot: path.resolve(config.remote),
+    {{else}}
     // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
+    {{/aym}}
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
 

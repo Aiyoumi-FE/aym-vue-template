@@ -21,6 +21,7 @@ const devPort = '' // xx
 //***********************************************************************//
 
 const env = [
+    'dev',
     'test',
     'aliyun1',
     'aliyun2',
@@ -43,8 +44,21 @@ console.log('vi /etc/hosts')
 console.log('127.0.0.1 ', frontList.join(' '))
 console.log('***********************************************************')
 
+// serverList.forEach((item, i) => {
+//     cookieLocal[item] = frontList[i]
+// })
+
 serverList.forEach((item, i) => {
     cookieLocal[item] = frontList[i]
+    let arr = ['开发mock数据', '105', '阿里云1', '阿里云2', '阿里云4', '性能']
+    let str = 10
+    if (i === 0) {
+        console.log('-'.repeat(str * 2) + '本地环境代理' + '-'.repeat(str * 2))
+    }
+    console.log(arr[i] + '环境:', `http://${frontList[i]}:${frontPort}`)
+    if (i === (serverList.length - 1)) {
+        console.log('-'.repeat(str * 5) + '\n')
+    }
 })
 frontList.forEach((item, i) => {
     routerLocal[`${item}:${frontPort}`] = `https://${serverList[i]}:${serverPort}`
