@@ -8,7 +8,7 @@ const path = require('path')
 {{#aym}}
 const config = require('./path')
 if (process.env.NODE_ENV !== 'production') {
-    proxyTable = require('./proxy.conf.js').proxyConfig
+    proxyTable = require('./proxy.conf.js').proxyTable
 }
 {{/aym}}
 module.exports = {
